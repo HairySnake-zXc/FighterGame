@@ -7,7 +7,6 @@ internal class Bullet : MonoBehaviour
     [SerializeField] private float _speed;
 
 
-
     private void Update()
     {
         transform.position += Forward * _speed * Time.deltaTime;

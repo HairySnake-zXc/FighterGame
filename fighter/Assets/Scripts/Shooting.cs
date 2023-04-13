@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private Bullet _bullet;
 
+
     private void Start()
     {
         StartCoroutine(Shoot());
