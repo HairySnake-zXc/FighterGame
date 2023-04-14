@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShipMovement : MonoBehaviour
@@ -10,75 +12,87 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] private float _angularHorizontalSpeed;
     [SerializeField] private float _rotationAroundSpeed;
     [SerializeField] private float _rotationAroundMaxSpeed;
-    [SerializeField] private float _maxSpeed;
-    [SerializeField] private float _minSpeed;
-    [SerializeField] private float _speedAddMultiplier;
-    [SerializeField] private float _speedReduceMultiplier;
+
+    [SerializeField] private bool _canControlShip;
 
     private float _thrustMultiplier = 3;
     private Vector3 _mainForce = new Vector3();
-    private Vector3 _thrust;
-
+    private List<Vector3> forces = new List<Vector3>();
+    private List<Vector3> localAngularForces = new List<Vector3>();
 
     private void Start()
     {
-        _thrust = transform.forward;
         Cursor.visible = false;
+        _canControlShip = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        Debug.Log(collision.impulse);
-        _thrustMultiplier = Mathf.Min(-_thrustMultiplier, -10);
+        StartCoroutine(ThrowAwayOnCollision());
+        Debug.Log(collision.GetContact(0).normal);
+        _mainForce = collision.GetContact(0).normal * _mainForce.magnitude;
+        _thrustMultiplier = 0;
     }
+
+    private IEnumerator ThrowAwayOnCollision()
+    {
+        _canControlShip = false;
+        yield return new WaitForSeconds(2);
+        _canControlShip = true;
+    }
+
 
     private void Update()
     {
-        var forces = new List<Vector3>();
-        var localAngularForces = new List<Vector3>();
-
-        var target = _target.NormVectorFromForwardToTarget;
-        localAngularForces.Add(new Vector3(-target.y * _angularVerticalSpeed, target.x * _angularHorizontalSpeed));
-
-        if (Input.GetKey(KeyCode.A))
+        if (_canControlShip)
         {
-            if (_angularForceQuotient > _rotationAroundSpeed)
-                _angularForceQuotient = _rotationAroundSpeed;
-            else
-                _angularForceQuotient += _rotationAroundMaxSpeed;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            if (_angularForceQuotient < -_rotationAroundSpeed)
-                _angularForceQuotient = -_rotationAroundSpeed;
-            else
-                _angularForceQuotient -= -_rotationAroundMaxSpeed;
-        }
-        else
-            _angularForceQuotient *= .95f;
+            forces.Clear();
+            localAngularForces.Clear();
 
-        localAngularForces.Add(new Vector3(0, 0, _angularForceQuotient) * Time.deltaTime);
+            var target = _target.NormVectorFromForwardToTarget;
+            localAngularForces.Add(new Vector3(-target.y * _angularVerticalSpeed, target.x * _angularHorizontalSpeed));
 
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            if (_thrustMultiplier < 15)
-                _thrustMultiplier += .2f;
+            if (Input.GetKey(KeyCode.A))
+            {
+                if (_angularForceQuotient > _rotationAroundMaxSpeed)
+                    _angularForceQuotient = _rotationAroundMaxSpeed;
+                else
+                    _angularForceQuotient += _rotationAroundSpeed;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                if (_angularForceQuotient < -_rotationAroundMaxSpeed)
+                    _angularForceQuotient = -_rotationAroundMaxSpeed;
+                else
+                    _angularForceQuotient -= _rotationAroundSpeed;
+            }
             else
-                _thrustMultiplier = 15;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            if (_thrustMultiplier > 3)
-                _thrustMultiplier -= .1f;
-            else
-                _thrustMultiplier = 3;
-        }
+                _angularForceQuotient *= .9f;
 
-        var engineForce = _thrustMultiplier * _thrust;
-        forces.Add(engineForce);
-        _mainForce = forces.Aggregate((v1, v2) => v1 + v2);
+            localAngularForces.Add(new Vector3(0, 0, _angularForceQuotient) * (1000 * Time.deltaTime));
+
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                if (_thrustMultiplier < 15)
+                    _thrustMultiplier += .2f;
+                else
+                    _thrustMultiplier = 15;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                if (_thrustMultiplier > 3)
+                    _thrustMultiplier -= .1f;
+                else
+                    _thrustMultiplier = 3;
+            }
+
+            var engineForce = _thrustMultiplier * transform.forward;
+            forces.Add(engineForce);
+
+            transform.Rotate(localAngularForces.Aggregate((e1, e2) => e1 + e2) * Time.deltaTime, Space.Self);
+            _mainForce = forces.Aggregate((v1, v2) => v1 + v2);
+        }
         transform.position += _mainForce * Time.deltaTime;
     }
 }
