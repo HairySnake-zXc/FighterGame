@@ -12,6 +12,9 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] private float _angularHorizontalSpeed;
     [SerializeField] private float _rotationAroundSpeed;
     [SerializeField] private float _rotationAroundMaxSpeed;
+    
+    [SerializeField] private int maxEngineForce;
+    [SerializeField] private int minEngineForce;
 
     [SerializeField] private bool _canControlShip;
 
@@ -20,6 +23,7 @@ public class ShipMovement : MonoBehaviour
     private List<Vector3> forces = new List<Vector3>();
     private List<Vector3> localAngularForces = new List<Vector3>();
 
+    public static float engineForceAsPercentage;
     private void Start()
     {
         Cursor.visible = false;
@@ -74,21 +78,24 @@ public class ShipMovement : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W))
             {
-                if (_thrustMultiplier < 15)
+                if (_thrustMultiplier < maxEngineForce)
                     _thrustMultiplier += .2f;
                 else
-                    _thrustMultiplier = 15;
+                    _thrustMultiplier = maxEngineForce;
             }
             else if (Input.GetKey(KeyCode.S))
             {
-                if (_thrustMultiplier > 3)
+                if (_thrustMultiplier > minEngineForce)
                     _thrustMultiplier -= .1f;
                 else
-                    _thrustMultiplier = 3;
+                    _thrustMultiplier = minEngineForce;
             }
 
             var engineForce = _thrustMultiplier * transform.forward;
             forces.Add(engineForce);
+
+            engineForceAsPercentage =
+                (engineForce.magnitude - minEngineForce) / (maxEngineForce - minEngineForce);
 
             transform.Rotate(localAngularForces.Aggregate((e1, e2) => e1 + e2) * Time.deltaTime, Space.Self);
             _mainForce = forces.Aggregate((v1, v2) => v1 + v2);
