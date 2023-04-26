@@ -5,22 +5,50 @@ using System;
 
 public class Ship : MonoBehaviour
 {
-    private float _health;
-    public float Health => _health;
+    [SerializeField] private int _health;
 
-    public void TakeDamage(float damage)
+    [SerializeField] private float _speed;
+
+    [SerializeField] private KeyCode _keyCode;
+    
+    private int _currentHealth;
+    public int Health => _health;
+    
+    public float Speed => _speed;
+    
+    public event Action<float> HealthChanged; 
+    
+    void Start()
     {
-        if (damage < 0)
-            throw new ArgumentException();
-        _health -= Math.Min(_health, damage);
-        if (damage <= 0)
+        _currentHealth = _health;
+    }
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(_keyCode))
         {
-            Die();
+            ChangeHealth(-10);
+        }
+    }
+    
+    private void ChangeHealth(int value)
+    {
+        _currentHealth += value;
+
+        if (_currentHealth <= 0)
+        {
+            Death();
+        }
+        else
+        {
+            var currentHealthAsPercentage = (float)_currentHealth / _health;
+            HealthChanged?.Invoke(currentHealthAsPercentage);
         }
     }
 
-    private void Die()
+    private void Death()
     {
-        
+        HealthChanged?.Invoke(0);
+        Debug.Log("YOU ARE DEAD");
     }
 }
