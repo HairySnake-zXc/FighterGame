@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.058843393, g: 0.03064292, b: 0.09435398, a: 1}
+  m_IndirectSpecularColor: {r: 0.05880386, g: 0.030643646, b: 0.0943533, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,6 +172,8 @@ MonoBehaviour:
   _health: 40
   _speed: 0
   _keyCode: 103
+  ship: {fileID: 0}
+  particles: {fileID: 0}
 --- !u!1 &27236146
 GameObject:
   m_ObjectHideFlags: 0
@@ -12681,6 +12683,8 @@ MonoBehaviour:
   _health: 50
   _speed: 0
   _keyCode: 102
+  ship: {fileID: 919132149040623147}
+  particles: {fileID: 3936704631965028523, guid: 6aff1139c0fc6ec42bc4a396b73e2ab6, type: 3}
 --- !u!1 &1075341503918746459
 GameObject:
   m_ObjectHideFlags: 0

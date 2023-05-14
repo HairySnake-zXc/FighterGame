@@ -10,6 +10,10 @@ public class Ship : MonoBehaviour
     [SerializeField] private float _speed;
 
     [SerializeField] private KeyCode _keyCode;
+
+    [SerializeField] private GameObject ship;
+
+    [SerializeField] private ParticleSystem particles;
     
     private int _currentHealth;
     public int Health => _health;
@@ -49,6 +53,8 @@ public class Ship : MonoBehaviour
     private void Death()
     {
         HealthChanged?.Invoke(0);
+        Instantiate(particles, ship.transform.position, Quaternion.identity);
+        Destroy(ship);
         Debug.Log("YOU ARE DEAD");
     }
 }
