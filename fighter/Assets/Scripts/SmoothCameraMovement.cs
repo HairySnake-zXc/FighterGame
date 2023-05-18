@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SmoothCameraMovement : MonoBehaviour
@@ -10,6 +11,7 @@ public class SmoothCameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (_target.IsDestroyed()) return;
         var point = _target.forward * -_depthOffset + _target.up * _verticalOffset;
         Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, _target.position + point, 8 * Time.deltaTime);
         Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, _target.rotation, 8 * Time.deltaTime);
