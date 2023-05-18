@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -31,7 +29,7 @@ public class Ship : MonoBehaviour
         }
     }
     
-    private void ChangeHealth(int value)
+    public void ChangeHealth(int value)
     {
         _currentHealth += value;
 
