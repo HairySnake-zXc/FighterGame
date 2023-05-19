@@ -41,59 +41,69 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\RidgidNoiseFilter.cs" />
      <Compile Include="Assets\Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\Pathfinding.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\PriorityQueue.cs" />
      <Compile Include="Assets\Scripts\SmoothCameraMovement.cs" />
      <Compile Include="Assets\Scripts\Shooting.cs" />
      <Compile Include="Assets\Scripts\LightShip.cs" />
-     <Compile Include="Assets\Scripts\NoiseSettings.cs" />
      <Compile Include="Assets\Scripts\EnginePower.cs" />
-     <Compile Include="Assets\Scripts\INoiseFilter.cs" />
-     <Compile Include="Assets\Scripts\EnemyBehaviour\Enemy.cs" />
-     <Compile Include="Assets\Scripts\SimpleNoiseFilter.cs" />
      <Compile Include="Assets\Scripts\Ship.cs" />
-     <Compile Include="Assets\Scripts\NoiseFilterFactory.cs" />
-     <Compile Include="Assets\Scripts\TODELETE\aboba.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\MoveAlong.cs" />
-     <Compile Include="Assets\Scripts\TerrainFace.cs" />
-     <Compile Include="Assets\Scripts\Planet.cs" />
-     <Compile Include="Assets\Scripts\Noise.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\NavigationMap.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\PathConverter.cs" />
-     <Compile Include="Assets\Scripts\PathFinding\Path.cs" />
      <Compile Include="Assets\Scripts\LookAtPlayer.cs" />
-     <Compile Include="Assets\Scripts\Turret\Turret.cs" />
      <Compile Include="Assets\Scripts\CrosshairMovement.cs" />
      <Compile Include="Assets\Scripts\Change.cs" />
-     <Compile Include="Assets\Scripts\Gen\SpaceGeneration.cs" />
-     <Compile Include="Assets\Scripts\ShapeSettings.cs" />
-     <Compile Include="Assets\Scripts\ColourSettings.cs" />
+     <Compile Include="Assets\Scripts\TODELETE\aboba.cs" />
      <Compile Include="Assets\Scripts\ShapeGenerator.cs" />
+     <Compile Include="Assets\Scripts\INoiseFilter.cs" />
+     <Compile Include="Assets\Scripts\NoiseSettings.cs" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Noise.cs" />
+     <Compile Include="Assets\Scripts\Planet.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\NavigationMap.cs" />
      <Compile Include="Assets\Scripts\Gen\SphereRandomGeneration.cs" />
-     <Compile Include="Assets\Scripts\ConditionalHideAttribute.cs" />
+     <Compile Include="Assets\Scripts\SimpleNoiseFilter.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\MoveAlong.cs" />
+     <Compile Include="Assets\Scripts\ColourSettings.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\EnemyMoving.cs" />
+     <Compile Include="Assets\Scripts\TerrainFace.cs" />
+     <Compile Include="Assets\Scripts\Turret\Turret.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\PathConverter.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\PriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\Pathfinding.cs" />
+     <Compile Include="Assets\Scripts\NoiseFilterFactory.cs" />
+     <Compile Include="Assets\Scripts\ConditionalHideAttribute.cs" />
+     <Compile Include="Assets\Scripts\PathFinding\Path.cs" />
+     <Compile Include="Assets\Scripts\ShapeSettings.cs" />
+     <Compile Include="Assets\Scripts\RidgidNoiseFilter.cs" />
+     <Compile Include="Assets\Scripts\Gen\SpaceGeneration.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\Score.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\Restart.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\GoToMenu.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\DeathScreen.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\Pause.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\MainMenu.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\SkySeries Freebie" />
      <Folder Include="Assets\Data" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\Sprites\Fonts" />
      <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\Textures" />
      <Folder Include="Assets\Scripts\Gen" />
-     <Folder Include="Assets\Sprites\UI" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
      <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Scripts\Settings" />
+     <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\Scripts\UI Scripts" />
      <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Sprites\UI" />
      <Folder Include="Assets\Scripts\PathFinding" />
      <Folder Include="Assets\SkySeries Freebie\FreebieHdri" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
@@ -111,10 +121,11 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\Prefab" />
      <Folder Include="Assets\Scripts\Turret" />
+     <Folder Include="Assets\Animations" />
      <Folder Include="Assets\Scripts\TODELETE" />
+     <Folder Include="Assets\Animations\DeathScreen" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\SkySeries Freebie\Hdri setup.txt" />
-     <Folder Include="Assets\Sprites" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\Scripts\EnemyBehaviour" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -371,10 +382,10 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\PackageCache\com.unity.visualscripting@1.8.0\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
      </Reference>
      <Reference Include="ReportGeneratorMerged">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -743,73 +754,73 @@
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.19f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.State">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
      <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>C:\Users\mamev\OneDrive\Рабочий стол\FighterGame\fighter\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+     <HintPath>C:\Users\1\Desktop\Repositories\Game\FighterGame\fighter\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

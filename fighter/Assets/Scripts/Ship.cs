@@ -8,6 +8,8 @@ public class Ship : MonoBehaviour
     [SerializeField] private float _speed;
 
     [SerializeField] private KeyCode _keyCode;
+
+    [SerializeField] private DeathScreen screen;
     
     private int _currentHealth;
     public int Health => _health;
@@ -48,5 +50,6 @@ public class Ship : MonoBehaviour
     {
         HealthChanged?.Invoke(0);
         Debug.Log("YOU ARE DEAD");
+        screen.gameObject.SetActive(true);
     }
 }
