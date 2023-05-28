@@ -10,9 +10,12 @@ public class Ship : MonoBehaviour
     [SerializeField] private KeyCode _keyCode;
 
     [SerializeField] private DeathScreen screen;
+
+    [SerializeField] private GameObject explosion;
     
     private int _currentHealth;
-    public int Health => _health;
+    public int Health => _currentHealth;
+    public int MaxHealth => _health;
     
     public float Speed => _speed;
     
@@ -34,7 +37,6 @@ public class Ship : MonoBehaviour
     public void ChangeHealth(int value)
     {
         _currentHealth += value;
-
         if (_currentHealth <= 0)
         {
             Death();
@@ -49,7 +51,10 @@ public class Ship : MonoBehaviour
     private void Death()
     {
         HealthChanged?.Invoke(0);
-        Debug.Log("YOU ARE DEAD");
-        screen.gameObject.SetActive(true);
+        if (gameObject.TryGetComponent<ShipMovement>(out var a))
+            screen.gameObject.SetActive(true);
+        var b = Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(b, 4f);
+        Destroy(gameObject);
     }
 }

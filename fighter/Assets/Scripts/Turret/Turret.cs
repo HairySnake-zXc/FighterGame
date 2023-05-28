@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
@@ -8,46 +10,85 @@ public class Turret : MonoBehaviour
         Idle,
         Attacking
     }
+
     [SerializeField] private Transform tower;
     [SerializeField] private Transform barrel;
-    private State _state = State.Idle;
-    [SerializeField] private Transform _target;
+    [SerializeField] private Transform[] guns;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private Vector3 _target;
     [SerializeField] private float _rotationSpeed;
-
-    private Vector3 startPos;
+    private State _state = State.Idle;
+    private bool _canAttack = false;
 
     private void Start()
     {
-        startPos = barrel.forward;
+        StartCoroutine(Fire());
     }
+
 
     private void Update()
     {
+        Vector3 target = new Vector3();
         switch (_state)
         {
             case State.Attacking:
-                
+                target = _target;
                 break;
             case State.Idle:
+                target = transform.forward * 1000 + transform.position;
                 break;
-            
-            
         }
-        var targetPosition = _target.position - tower.position;
+
+        var targetPosition = target - tower.position;
         var rotateToEnemy = Vector3.ProjectOnPlane(targetPosition, transform.up);
         tower.forward = Vector3.Slerp(tower.forward, rotateToEnemy, _rotationSpeed * Time.deltaTime);
-        var barrelPosition = _target.position - barrel.position;
+        var barrelPosition = target - barrel.position;
         var aimToEnemy = Vector3.ProjectOnPlane(barrelPosition, tower.right);
         if (Vector3.SignedAngle(tower.forward, aimToEnemy, barrel.right) <= 0)
             barrel.forward = Vector3.Slerp(barrel.forward, aimToEnemy, _rotationSpeed * Time.deltaTime);
+        if (_state == State.Attacking)
+        {
+            if (Vector3.Angle(barrelPosition, barrel.forward) < 10)
+            {
+                _canAttack = true;
+            }
+            else
+            {
+                _canAttack = false;
+            }
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private IEnumerator Fire()
+    {
+        while (true)
+        {
+            if (_canAttack && _state == State.Attacking)
+            {
+                for (var i = 0; i < 3; i++)
+                {
+                    foreach (var point in guns)
+                    {
+                        var obj = Instantiate(bullet, point.position, point.rotation);
+                        Destroy(obj, 6f);
+                    }
+
+                    yield return new WaitForSeconds(.5f);
+                }
+
+                yield return new WaitForSeconds(3f);
+            }
+
+            yield return null;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.TryGetComponent<ShipMovement>(out var ship))
         {
             _state = State.Attacking;
-            _target = other.transform;
+            _target = other.transform.position;
         }
     }
 
@@ -56,7 +97,6 @@ public class Turret : MonoBehaviour
         if (other.TryGetComponent<ShipMovement>(out var ship))
         {
             _state = State.Idle;
-            _target = transform;
         }
     }
 }

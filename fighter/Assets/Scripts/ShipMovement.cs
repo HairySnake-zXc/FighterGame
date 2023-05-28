@@ -32,7 +32,11 @@ public class ShipMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         StartCoroutine(ThrowAwayOnCollision());
+        
+        gameObject.GetComponent<Ship>().ChangeHealth(-100000);
         Debug.Log(collision.GetContact(0).normal);
+        if (collision.gameObject.TryGetComponent<Ship>(out var a))
+            a.ChangeHealth(-10000);
         _mainForce = collision.GetContact(0).normal * _mainForce.magnitude;
         _thrustMultiplier = 0;
     }

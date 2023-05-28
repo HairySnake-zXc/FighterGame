@@ -37,7 +37,7 @@ public class ShapeGenerator {
                 elevation += noiseFilters[i].Evaluate(pointOnUnitSphere) * mask;
             }
         }
-        return pointOnUnitSphere * settings.planetRadius * (1+elevation);
+        return pointOnUnitSphere * (settings.planetRadius * (1+elevation));
     }
 }
  

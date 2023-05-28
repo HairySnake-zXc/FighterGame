@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 300
+  _me:
+    serializedVersion: 2
+    m_Bits: 8
+  damage: 10
 --- !u!1 &8452121615732182072
 GameObject:
   m_ObjectHideFlags: 0

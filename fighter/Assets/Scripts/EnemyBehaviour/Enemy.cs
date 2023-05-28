@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private Ship ship;
+    [SerializeField] private EnemyMovement movement;
+    [SerializeField] private Transform target;
     private enum State
     {
         Attacking,
@@ -16,5 +19,17 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    private float EstimateState()
+    {
+        var lowHealthPenalty = ship.MaxHealth / ship.Health * 10000;
+        var enemyDistance = Vector3.Distance(transform.position, ship.transform.position);
+        return -lowHealthPenalty;
+    }
+
+    private State ChooseBehaviour()
+    {
+        return State.Idle;
     }
 }

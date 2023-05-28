@@ -3,10 +3,9 @@
 
 internal class Bullet : MonoBehaviour
 {
-    public Vector3 Forward { get; set; }
     [SerializeField] private float _speed;
     [SerializeField] private LayerMask _me;
-
+    [SerializeField] private int damage;
     private void Update()
     {
         if (Physics.Raycast(transform.position, transform.forward, out var hit, _speed * Time.deltaTime, ~_me))
@@ -14,10 +13,10 @@ internal class Bullet : MonoBehaviour
             transform.position = hit.point;
             if (hit.transform.gameObject.TryGetComponent<Ship>(out var ship))
             {
-                ship.ChangeHealth(-5);
+                ship.ChangeHealth(-damage);
             }
             
         }
-        transform.position += Forward * _speed * Time.deltaTime;
+        transform.position += transform.forward * (_speed * Time.deltaTime);
     }
 }

@@ -1,34 +1,35 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
 
-    [SerializeField] private Image _healthBarFilling;
-    [SerializeField] Ship ship;
+    [SerializeField] private Image healthBarFilling;
+    [SerializeField] private Ship ship;
+    [SerializeField] private float damageIndicationTime;
 
-    private void Awake()
+    private void OnEnable()
     {
         ship.HealthChanged += OnHealthChanged;
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         ship.HealthChanged -= OnHealthChanged;
     }
 
     private void OnHealthChanged(float valueAsPercentage)
     {
-        Debug.Log(valueAsPercentage);
-        _healthBarFilling.fillAmount = valueAsPercentage;
+        healthBarFilling.fillAmount = valueAsPercentage;
         StartCoroutine(DamageAnimation());
     }
 
     private IEnumerator DamageAnimation()
     {
-        _healthBarFilling.color = Color.red;
-        yield return new WaitForSeconds(2);
-        _healthBarFilling.color = Color.white;
+        healthBarFilling.color = Color.red;
+        yield return new WaitForSeconds(damageIndicationTime);
+        healthBarFilling.color = Color.white;
     }
 }
