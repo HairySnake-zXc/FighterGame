@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathScreen : MonoBehaviour
 {
     [SerializeField] private Canvas screen;
     private bool _gameIsPaused;
-    
-    void Start()
+
+    private void Start()
     {
         screen.gameObject.SetActive(false);
     }
-    void Update()
+
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -20,7 +18,8 @@ public class DeathScreen : MonoBehaviour
             PauseGame();
         }
     }
-    void PauseGame ()
+
+    private void PauseGame ()
     {
         if(_gameIsPaused)
         {
