@@ -7,12 +7,10 @@ public class Ship : MonoBehaviour
 
     [SerializeField] private float _speed;
 
-    [SerializeField] private KeyCode _keyCode;
-
     [SerializeField] private DeathScreen screen;
 
     [SerializeField] private GameObject explosion;
-    
+
     private int _currentHealth;
     public int Health => _currentHealth;
     public int MaxHealth => _health;
@@ -25,15 +23,7 @@ public class Ship : MonoBehaviour
     {
         _currentHealth = _health;
     }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(_keyCode))
-        {
-            ChangeHealth(-10);
-        }
-    }
-    
+
     public void ChangeHealth(int value)
     {
         _currentHealth += value;

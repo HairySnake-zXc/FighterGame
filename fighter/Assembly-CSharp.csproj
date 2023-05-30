@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\RidgidNoiseFilter.cs" />
-     <Compile Include="Assets\Scripts\HealthBar.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\HealthBar.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\PathFinding\Pathfinding.cs" />
      <Compile Include="Assets\Scripts\ShipMovement.cs" />
@@ -52,7 +52,7 @@
      <Compile Include="Assets\Scripts\Shooting\Shooting.cs" />
      <Compile Include="Assets\Scripts\LightShip.cs" />
      <Compile Include="Assets\Scripts\NoiseSettings.cs" />
-     <Compile Include="Assets\Scripts\EnginePower.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\EnginePower.cs" />
      <Compile Include="Assets\Scripts\INoiseFilter.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\Enemy.cs" />
      <Compile Include="Assets\Scripts\SimpleNoiseFilter.cs" />
@@ -73,7 +73,6 @@
      <Compile Include="Assets\Scripts\Turret\Turret.cs" />
      <Compile Include="Assets\Scripts\CrosshairMovement.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\Change.cs" />
      <Compile Include="Assets\Scripts\Gen\SpaceGeneration.cs" />
      <Compile Include="Assets\Scripts\ShapeSettings.cs" />
      <Compile Include="Assets\Scripts\ColourSettings.cs" />
@@ -89,6 +88,7 @@
      <Compile Include="Assets\Scripts\Leaderboard\BoardScore.cs" />
      <Compile Include="Assets\Scripts\Leaderboard\ScoreManager.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\NameInputUI.cs" />
+     <Compile Include="Assets\Scripts\UI Scripts\Dammage.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\SkySeries Freebie" />
@@ -101,6 +101,7 @@
      <Folder Include="Assets\Data\asteroid-low-poly" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <Folder Include="Assets\Textures" />
+     <Folder Include="Assets\Animations\Dammage" />
      <Folder Include="Assets\Scripts\Gen" />
      <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />

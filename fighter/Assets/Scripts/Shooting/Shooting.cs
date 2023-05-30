@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private Bullet _bullet;
     private float _heatPercentage;
-    [SerializeField] private Text text;
+    [SerializeField] private Image heatBarFilling;
     private void Start()
     {
         StartCoroutine(Shoot());
@@ -21,10 +21,9 @@ public class Shooting : MonoBehaviour
         {
             if (_heatPercentage >= 100)
             {
-                text.color = Color.red;
-                text.text = "OVERHEAT!";
+                heatBarFilling.color = Color.red;
                 yield return new WaitForSeconds(2f);
-                text.color = Color.white;
+                heatBarFilling.color = Color.white;
             }
             if (Input.GetKey(KeyCode.Mouse0))
             {
@@ -33,11 +32,10 @@ public class Shooting : MonoBehaviour
                     var bullet = Instantiate(_bullet.gameObject, item.position, gameObject.transform.rotation);
                     Destroy(bullet.gameObject, 4f);
                 }
-                _heatPercentage += 2000f * Time.deltaTime;
+                _heatPercentage += 600f * Time.fixedDeltaTime;
                 yield return new WaitForSeconds(.15f);
             }
-
-            text.text = $"heat: {(int)_heatPercentage}";
+            heatBarFilling.fillAmount = _heatPercentage / 100;
             yield return 0;
         }
     }

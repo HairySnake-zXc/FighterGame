@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -9,7 +8,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Image healthBarFilling;
     [SerializeField] private Ship ship;
     [SerializeField] private float damageIndicationTime;
-
     private void OnEnable()
     {
         ship.HealthChanged += OnHealthChanged;
