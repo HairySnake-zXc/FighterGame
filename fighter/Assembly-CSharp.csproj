@@ -78,7 +78,7 @@
      <Compile Include="Assets\Scripts\Turret\Turret.cs" />
      <Compile Include="Assets\Scripts\CrosshairMovement.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\Score.cs" />
-     <Compile Include="Assets\Scripts\UI Scripts\SoundSettings.cs" />
+     <Compile Include="Assets\Scripts\Sound Scripts\SoundSettings.cs" />
      <Compile Include="Assets\Scripts\Gen\SpaceGeneration.cs" />
      <Compile Include="Assets\Scripts\ShapeSettings.cs" />
      <Compile Include="Assets\Scripts\ColourSettings.cs" />
@@ -90,6 +90,8 @@
      <Compile Include="Assets\Scripts\Leaderboard\ScoreData.cs" />
      <Compile Include="Assets\Scripts\UI Scripts\Dammage.cs" />
      <Compile Include="Assets\Scripts\EnemyBehaviour\EnemyMovement.cs" />
+     <Compile Include="Assets\Scripts\Sound Scripts\EnginSound.cs" />
+     <Compile Include="Assets\Scripts\Sound Scripts\DamageSound.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\SkySeries Freebie" />
@@ -113,6 +115,7 @@
      <Folder Include="Assets\Scripts\Settings" />
      <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Materials" />
+     <Folder Include="Assets\Scripts\Sound Scripts" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\Scripts\UI Scripts" />
      <Folder Include="Assets\TextMesh Pro" />
