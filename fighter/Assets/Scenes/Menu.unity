@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.058843393, g: 0.03064292, b: 0.09435398, a: 1}
+  m_IndirectSpecularColor: {r: 0.058842983, g: 0.030642135, b: 0.094349064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3974,7 +3974,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: Kosmos Game 3D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 373032976c8eb014c9736186fe60f459, type: 2}
   m_sharedMaterial: {fileID: -3151625729782121958, guid: 373032976c8eb014c9736186fe60f459, type: 2}
@@ -4037,7 +4037,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.014892578, w: 0}
+  m_margin: {x: -50.965027, y: 0, z: -94.07446, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
